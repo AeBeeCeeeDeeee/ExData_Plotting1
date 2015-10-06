@@ -11,6 +11,7 @@ measurements <-
           dbname = tempfile(), 
           file.format = list(header = TRUE, row.names = FALSE, sep = ";"))
 
+close(f)
 
 # Plot must be saved as PNG files of 480x480 pixels
 png(filename = "./ExData_Plotting1/plot1.png", 
