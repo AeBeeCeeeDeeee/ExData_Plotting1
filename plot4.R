@@ -14,7 +14,7 @@ measurements <-
 close(f)
 
 library(lubridate)
-measurements$DateTime <- dmy_hms(paste(measurements$Date, measurements$Time))
+measurements$datetime <- dmy_hms(paste(measurements$Date, measurements$Time))
 
 # Plot must be saved as PNG files of 480x480 pixels
 png(filename = "./ExData_Plotting1/plot4.png", 
@@ -29,23 +29,23 @@ par(mfcol = c(2, 2), mar = c(4, 4, 3, 2))
 # "jueves" (thursday), "viernes" (friday) and "sabado" (saturday) in x labels
 with(measurements, {
     # Plot of Global active power through days
-    plot(DateTime,
+    plot(datetime,
          Global_active_power, 
          type = "l",
          ylab = "Global Active Power",
          xlab = "")
 
     # Plot of energy sub metering
-    plot(DateTime,
+    plot(datetime,
          Sub_metering_1, 
          type = "l",
          ylab = "Energy sub metering",
          xlab = "")
-    lines(DateTime,
+    lines(datetime,
           Sub_metering_2, 
           type = "l",
           col = "red")
-    lines(DateTime,
+    lines(datetime,
           Sub_metering_3, 
           type = "l",
           col = "blue")
@@ -56,13 +56,13 @@ with(measurements, {
            bty = "n")
     
     # Plot of Voltage through days
-    plot(DateTime,
+    plot(datetime,
          Voltage, 
          type = "l",
          ylab = "Voltage")
     
     # Plot of Global reactive power through days
-    plot(DateTime,
+    plot(datetime,
          Global_reactive_power, 
          type = "l")
 })
