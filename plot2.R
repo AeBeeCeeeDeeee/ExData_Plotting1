@@ -16,16 +16,14 @@ close(f)
 library(lubridate)
 measurements$DateTime <- dmy_hms(paste(measurements$Date, measurements$Time))
 
-## MODIFY
-
 # Plot must be saved as PNG files of 480x480 pixels
 png(filename = "./ExData_Plotting1/plot2.png", 
     width = 480, 
     height = 480, 
     units = "px")
 
-# Please note that my environment is in spanish, so the day names are "jueves", 
-# "viernes" and "sabado" for the measurements
+# Please note that my environment is in spanish, so the day names are 
+# "jueves" (thursday), "viernes" (friday) and "sabado" (saturday) in x labels
 plot(measurements$DateTime,
      measurements$Global_active_power, 
      type = "l",
